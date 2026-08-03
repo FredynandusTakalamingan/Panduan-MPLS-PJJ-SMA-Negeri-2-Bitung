@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MPLS PJJ 2026 - SMA Negeri 2 Bitung</title>
+    <!-- Google Fonts & FontAwesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root[data-theme="light"] {
+            --bg-main: #f8fafc;
+            --bg-card: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --primary: #2563eb;
+            --primary-light: #eff6ff;
+            --secondary: #0d9488;
+            --accent: #f59e0b;
+            --border: #e2e8f0;
+            --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.025);
+            --header-bg: rgba(255, 255, 255, 0.85);
+        }
+
+        :root[data-theme="dark"] {
+            --bg-main: #0f172a;
+            --bg-card: #1e293b;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --primary: #3b82f6;
+            --primary-light: #1e3a8a;
+            --secondary: #14b8a6;
+            --accent: #fbbf24;
+            --border: #334155;
+            --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+            --header-bg: rgba(15, 23, 42, 0.85);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding-bottom: 60px;
+        }
+
+        /* Header & Nav */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: var(--header-bg);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid var(--border);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-icon {
+            background: var(--primary);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        .logo-text h1 {
+            font-size: 1.1rem;
+            font-weight: 800;
+            line-height: 1.2;
+        }
+
+        .logo-text p {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        .theme-toggle {
+            background: var(--bg-main);
+            border: 1px solid var(--border);
+            color: var(--text-main);
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 600;
+            font-size: 0.85rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        /* Hero Banner */
+        .hero {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            border-radius: 24px;
+            padding: 3rem 2rem;
+            text-align: center;
+            margin-bottom: 2.5rem;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero h2 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 1.05rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto 1.5rem;
+        }
+
+        .hero-tags {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(4px);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        /* Section Headings */
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 10px;
+        }
+
+        .section-title i {
+            color: var(--primary);
+        }
+
+        /* Cards Grid */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 1.5rem;
+            box-shadow: var(--shadow);
+        }
+
+        .card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .card ul {
+            list-style: none;
+        }
+
+        .card ul li {
+            position: relative;
+            padding-left: 24px;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+            color: var(--text-main);
+        }
+
+        .card ul li::before {
+            content: "\f00c";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            top: 2px;
+            color: var(--secondary);
+            font-size: 0.8rem;
+        }
+
+        /* Step Process */
+        .steps-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .step-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-top: 4px solid var(--primary);
+            border-radius: 12px;
+            padding: 1.2rem;
+            box-shadow: var(--shadow);
+        }
+
+        .step-num {
+            background: var(--primary-light);
+            color: var(--primary);
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .step-card h4 {
+            font-size: 0.95rem;
+            margin-bottom: 6px;
+        }
+
+        .step-card p {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+        }
+
+        /* Tabs for Schedule */
+        .tabs-section {
+            margin-bottom: 3rem;
+        }
+
+        .tabs-header {
+            display: flex;
+            gap: 10px;
+            overflow-x: auto;
+            padding-bottom: 10px;
+            margin-bottom: 1rem;
+        }
+
+        .tab-btn {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            color: var(--text-main);
+            padding: 10px 20px;
+            border-radius: 12px;
+            cursor: pointer;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .tab-btn.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        .tab-content {
+            display: none;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 1.5rem;
+            box-shadow: var(--shadow);
+            overflow-x: auto;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        /* Table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 0.88rem;
+        }
+
+        th, td {
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        th {
+            background: var(--bg-main);
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        .badge-sinkron {
+            background: #dbeafe;
+            color: #1e40af;
+            padding: 4px 8px;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 0.75rem;
+        }
+
+        .badge-asinkron {
+            background: #fef3c7;
+            color: #92400e;
+            padding: 4px 8px;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 0.75rem;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid var(--border);
+            margin-top: 3rem;
+            color: var(--text-muted);
+            font-size: 0.88rem;
+        }
+
+        .team-credits {
+            font-weight: 700;
+            color: var(--primary);
+            margin-top: 5px;
+        }
+
+        @media (max-width: 768px) {
+            .hero h2 { font-size: 1.6rem; }
+            .hero p { font-size: 0.9rem; }
+            header { padding: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="logo-area">
+            <div class="logo-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+            <div class="logo-text">
+                <h1>MPLS PJJ 2026</h1>
+                <p>SMA Negeri 2 Bitung</p>
+            </div>
+        </div>
+        <button class="theme-toggle" id="themeToggle">
+            <i class="fa-solid fa-moon"></i> <span>Dark Mode</span>
+        </button>
+    </header>
+
+    <div class="container">
+        <!-- Hero Section -->
+        <section class="hero">
+            <h2>Masa Pengenalan Lingkungan Sekolah</h2>
+            <p>Pendidikan Jarak Jauh (PJJ) yang Inklusif, Ramah Anak, Digital, dan Bebas Perundungan.</p>
+            <div class="hero-tags">
+                <span class="tag"><i class="fa-solid fa-clock"></i> 5 Hari (30 JP)</span>
+                <span class="tag"><i class="fa-solid fa-video"></i> 40% Sinkron</span>
+                <span class="tag"><i class="fa-solid fa-laptop-code"></i> 60% Asinkron</span>
+            </div>
+        </section>
+
+        <!-- Konsep & Prinsip Utama -->
+        <h2 class="section-title"><i class="fa-solid fa-bullseye"></i> Panduan & Prinsip Utama</h2>
+        <div class="grid-2">
+            <div class="card">
+                <h3><i class="fa-solid fa-lightbulb"></i> Konsep & Tujuan Utama</h3>
+                <ul>
+                    <li>Mengenalkan lingkungan sekolah, fasilitas, serta peran Sekolah Induk dan Sekolah Mitra.</li>
+                    <li>Memahami alur PJJ, kurikulum, dan tata tertib sekolah.</li>
+                    <li>Membekali kemampuan penggunaan LMS & Platform Digital.</li>
+                    <li>Menumbuhkan kebiasaan belajar mandiri (learner autonomy).</li>
+                    <li>Asesmen diagnostik awal (akademik, literasi, numerasi, & sosio-ekonomi).</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3><i class="fa-solid fa-shield-halved"></i> Prinsip Utama Pelaksanaan</h3>
+                <ul>
+                    <li><strong>Berpusat pada Murid & Inklusif:</strong> Mengakomodasi keterbatasan akses teknologi.</li>
+                    <li><strong>Aman & Digital Safety:</strong> Menjamin keamanan data pribadi & bebas cyberbullying.</li>
+                    <li><strong>Kombinasi Moda:</strong> 40% Tatap Maya (Zoom/GMeet) & 60% Mandiri (LMS).</li>
+                    <li><strong>Durasi Terstruktur:</strong> 5 Hari Kerja, 30 JP Total (1 JP = 45 Menit).</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Tahapan Pelaksanaan -->
+        <h2 class="section-title"><i class="fa-solid fa-diagram-project"></i> Tahapan Pelaksanaan</h2>
+        <div class="steps-container">
+            <div class="step-card">
+                <div class="step-num">1</div>
+                <h4>Tahap Persiapan</h4>
+                <p><strong>(H-7 MPLS):</strong> Pembentukan panitia, penetapan wali kelas, persiapan LMS, aktivasi akun belajar, & verifikasi internet.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-num">2</div>
+                <h4>Tahap Orientasi</h4>
+                <p><strong>(Masa MPLS):</strong> Pembekalan materi PJJ, literasi digital, simulasi LMS, etika komunikasi, & refleksi motivasi.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-num">3</div>
+                <h4>Asesmen & Pemetaan</h4>
+                <p><strong>(Awal):</strong> Tes diagnostik akademik, survei literasi-numerasi, kondisi psikososial, & profil belajar murid.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-num">4</div>
+                <h4>Masa Transisi</h4>
+                <p><strong>(2-4 Minggu):</strong> Pendampingan intensif wali kelas, pemantauan keaktifan LMS, & penanganan kendala awal.</p>
+            </div>
+        </div>
+
+        <!-- Tata Tertib Peserta -->
+        <h2 class="section-title"><i class="fa-solid fa-gavel"></i> Tata Tertib Peserta MPLS PJJ</h2>
+        <div class="grid-2">
+            <div class="card">
+                <h3><i class="fa-solid fa-video"></i> Etika Sesi Sinkron (Tatap Maya)</h3>
+                <ul>
+                    <li>Hadir di Zoom/Google Meet 10 menit sebelum sesi dimulai.</li>
+                    <li>Format nama: <code>Nama Lengkap_Kelas/Kelompok</code>.</li>
+                    <li>Berpakaian rapi, sopan, dan bersikap santun.</li>
+                    <li><strong>Kamera WAJIB On</strong>; Mikrofon dipadamkan (Mute) saat pemateri berbicara.</li>
+                    <li>Gunakan fitur <i>Raise Hand</i> untuk bertanya.</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3><i class="fa-solid fa-globe"></i> Etika Asinkron & Ruang Digital</h3>
+                <ul>
+                    <li>Gunakan bahasa santun di forum diskusi LMS/WhatsApp.</li>
+                    <li><strong>Dilarang menyebarkan data pribadi</strong> (password, nomor telepon) ke publik.</li>
+                    <li>Menjaga integritas akademik (jujur mengerjakan kuis/tugas).</li>
+                    <li>Menjauhi cyberbullying, provokasi, & ujaran kebencian.</li>
+                    <li>Segera laporkan kendala teknis (listrik/internet) ke Wali Kelas.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Jadwal / Susunan Kegiatan 5 Hari -->
+        <h2 class="section-title"><i class="fa-solid fa-calendar-days"></i> Susunan Kegiatan (5 Hari)</h2>
+        <div class="tabs-section">
+            <div class="tabs-header">
+                <button class="tab-btn active" onclick="openTab(event, 'hari1')">Hari 1</button>
+                <button class="tab-btn" onclick="openTab(event, 'hari2')">Hari 2</button>
+                <button class="tab-btn" onclick="openTab(event, 'hari3')">Hari 3</button>
+                <button class="tab-btn" onclick="openTab(event, 'hari4')">Hari 4</button>
+                <button class="tab-btn" onclick="openTab(event, 'hari5')">Hari 5</button>
+            </div>
+
+            <!-- Hari 1 -->
+            <div id="hari1" class="tab-content active">
+                <h3 style="margin-bottom:15px; color:var(--primary);">Hari 1: Mengenal Sekolah & Membangun Motivasi Belajar</h3>
+                <table>
+                    <thead>
+                        <tr><th>Waktu (WITA)</th><th>Moda</th><th>Kegiatan</th><th>Penanggung Jawab</th><th>Output / Hasil</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>08.00 – 08.45</td><td><span class="badge-sinkron">Sinkron</span></td><td>Pembukaan MPLS, Sambutan Kepsek, Pengenalan Guru</td><td>Kepala SMAN 2 Bitung</td><td>Mengenal lingkungan sekolah</td></tr>
+                        <tr><td>08.45 – 09.30</td><td><span class="badge-sinkron">Sinkron</span></td><td>Pengenalan Profil Sekolah, Budaya, & Layanan</td><td>Guru PJJ / Wali Kelas</td><td>Memahami layanan & kontak penting</td></tr>
+                        <tr><td>09.30 – 09.52</td><td><span class="badge-sinkron">Sinkron</span></td><td>Ice Breaking & Perkenalan Antarmurid</td><td>Wali Kelas</td><td>Keakraban awal antar siswa</td></tr>
+                        <tr><td>09.52 – 10.37</td><td><span class="badge-asinkron">Asinkron</span></td><td>Menonton Video Profil Sekolah (LMS)</td><td>Mandiri</td><td>Pengenalan visual sekolah</td></tr>
+                        <tr><td>10.37 – 11.22</td><td><span class="badge-asinkron">Asinkron</span></td><td>Membaca Panduan MPLS & Tata Tertib</td><td>Mandiri</td><td>Pemahaman aturan PJJ</td></tr>
+                        <tr><td>11.22 – 12.30</td><td><span class="badge-asinkron">Asinkron</span></td><td>Refleksi Mandiri: "Mengapa Saya Kembali Bersekolah?"</td><td>Mandiri</td><td>Jurnal motivasi belajar</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Hari 2 -->
+            <div id="hari2" class="tab-content">
+                <h3 style="margin-bottom:15px; color:var(--primary);">Hari 2: Memahami Sistem Pembelajaran PJJ</h3>
+                <table>
+                    <thead>
+                        <tr><th>Waktu (WITA)</th><th>Moda</th><th>Kegiatan</th><th>Penanggung Jawab</th><th>Output / Hasil</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>08.00 – 08.45</td><td><span class="badge-sinkron">Sinkron</span></td><td>Penjelasan Kurikulum, Modul Ajar, & Asesmen</td><td>Guru PJJ</td><td>Pemahaman alur belajar & nilai</td></tr>
+                        <tr><td>08.45 – 09.30</td><td><span class="badge-sinkron">Sinkron</span></td><td>Diskusi Hak, Kewajiban, & Etika Belajar</td><td>Guru PJJ</td><td>Kesepakatan norma PJJ</td></tr>
+                        <tr><td>09.30 – 09.52</td><td><span class="badge-sinkron">Sinkron</span></td><td>Simulasi Presensi Digital & Kelas Virtual</td><td>Guru PJJ</td><td>Kemampuan presensi digital</td></tr>
+                        <tr><td>09.52 – 11.00</td><td><span class="badge-asinkron">Asinkron</span></td><td>Eksplorasi Platform LMS secara Mandiri</td><td>Mandiri</td><td>Familiar dengan navigasi LMS</td></tr>
+                        <tr><td>11.00 – 11.45</td><td><span class="badge-asinkron">Asinkron</span></td><td>Kuis Pemahaman Sistem Pembelajaran PJJ</td><td>Mandiri</td><td>Nilai kuis sistem pembelajaran</td></tr>
+                        <tr><td>11.45 – 12.30</td><td><span class="badge-asinkron">Asinkron</span></td><td>Postingan Pertama di Forum Diskusi LMS</td><td>Mandiri</td><td>Keaktifan diskusi digital</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Hari 3 -->
+            <div id="hari3" class="tab-content">
+                <h3 style="margin-bottom:15px; color:var(--primary);">Hari 3: Penguasaan Teknologi & Literasi Digital</h3>
+                <table>
+                    <thead>
+                        <tr><th>Waktu (WITA)</th><th>Moda</th><th>Kegiatan</th><th>Penanggung Jawab</th><th>Output / Hasil</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>08.00 – 08.45</td><td><span class="badge-sinkron">Sinkron</span></td><td>Pelatihan Praktis Penggunaan LMS</td><td>Guru PJJ</td><td>Mahir menggunakan fitur LMS</td></tr>
+                        <tr><td>08.45 – 09.30</td><td><span class="badge-sinkron">Sinkron</span></td><td>Simulasi Daring & Pengumpulan Tugas</td><td>Guru PJJ</td><td>Paham alur pengiriman tugas</td></tr>
+                        <tr><td>09.30 – 09.52</td><td><span class="badge-sinkron">Sinkron</span></td><td>Tanya Jawab Kendala Teknis / Perangkat</td><td>Guru PJJ</td><td>Solusi kendala perangkat terdata</td></tr>
+                        <tr><td>09.52 – 11.00</td><td><span class="badge-asinkron">Asinkron</span></td><td>Menonton Video Literasi & Keamanan Siber</td><td>Mandiri</td><td>Pemahaman etika & keamanan siber</td></tr>
+                        <tr><td>11.00 – 11.45</td><td><span class="badge-asinkron">Asinkron</span></td><td>Kuis Pemahaman Literasi Digital</td><td>Mandiri</td><td>Refleksi pemahaman materi</td></tr>
+                        <tr><td>11.45 – 12.30</td><td><span class="badge-asinkron">Asinkron</span></td><td>Praktik Unggah (Upload) Tugas Pertama di LMS</td><td>Mandiri</td><td>Bukti kirim tugas pada sistem</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Hari 4 -->
+            <div id="hari4" class="tab-content">
+                <h3 style="margin-bottom:15px; color:var(--primary);">Hari 4: Potensi Diri & Rencana Belajar</h3>
+                <table>
+                    <thead>
+                        <tr><th>Waktu (WITA)</th><th>Moda</th><th>Kegiatan</th><th>Penanggung Jawab</th><th>Output / Hasil</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>08.00 – 08.45</td><td><span class="badge-sinkron">Sinkron</span></td><td>Sesi Motivasi Belajar & Manajemen Waktu</td><td>Guru BK / Pendamping</td><td>Strategi pengaturan waktu belajar</td></tr>
+                        <tr><td>08.45 – 09.30</td><td><span class="badge-sinkron">Sinkron</span></td><td>Konseling Kelompok & Diskusi Pengalaman</td><td>Guru BK / Pendamping</td><td>Identifikasi potensi hambatan</td></tr>
+                        <tr><td>09.30 – 09.52</td><td><span class="badge-sinkron">Sinkron</span></td><td>Wawancara Singkat dengan Wali Kelas</td><td>Wali Kelas</td><td>Keterikatan personal awal</td></tr>
+                        <tr><td>09.52 – 11.00</td><td><span class="badge-asinkron">Asinkron</span></td><td>Pelaksanaan Asesmen Diagnostik Akademik</td><td>Mandiri</td><td>Data kemampuan akademik awal</td></tr>
+                        <tr><td>11.00 – 11.45</td><td><span class="badge-asinkron">Asinkron</span></td><td>Pengisian Survei Profil & Kondisi Belajar</td><td>Mandiri</td><td>Peta profil & sarana murid</td></tr>
+                        <tr><td>11.45 – 12.30</td><td><span class="badge-asinkron">Asinkron</span></td><td>Menyusun Target Belajar Semester Pertama</td><td>Mandiri</td><td>Dokumen komitmen target</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Hari 5 -->
+            <div id="hari5" class="tab-content">
+                <h3 style="margin-bottom:15px; color:var(--primary);">Hari 5: Membangun Komitmen & Penutupan</h3>
+                <table>
+                    <thead>
+                        <tr><th>Waktu (WITA)</th><th>Moda</th><th>Kegiatan</th><th>Penanggung Jawab</th><th>Output / Hasil</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>08.00 – 08.45</td><td><span class="badge-sinkron">Sinkron</span></td><td>Pertemuan Bersama Orang Tua / Wali Murid</td><td>Kepala SMAN 2 Bitung</td><td>Sinergi sekolah & orang tua</td></tr>
+                        <tr><td>08.45 – 09.30</td><td><span class="badge-sinkron">Sinkron</span></td><td>Penjelasan Peran Ortum & Pendampingan</td><td>Wali Kelas</td><td>Pemahaman alur dukungan rumah</td></tr>
+                        <tr><td>09.30 – 09.52</td><td><span class="badge-sinkron">Sinkron</span></td><td>Deklarasi Komitmen & Penutupan Resmi</td><td>Kepala SMAN 2 Bitung</td><td>Dokumen komitmen bersama</td></tr>
+                        <tr><td>09.52 – 10.37</td><td><span class="badge-asinkron">Asinkron</span></td><td>Pengisian Evaluasi Pelaksanaan MPLS</td><td>Mandiri</td><td>Umpan balik evaluasi kegiatan</td></tr>
+                        <tr><td>10.37 – 11.22</td><td><span class="badge-asinkron">Asinkron</span></td><td>Penyusunan Rencana Belajar Minggu Pertama</td><td>Mandiri</td><td>Rencana jadwal belajar harian</td></tr>
+                        <tr><td>11.22 – 12.30</td><td><span class="badge-asinkron">Asinkron</span></td><td>Orientasi Mandiri LMS & Refleksi Akhir</td><td>Mandiri</td><td>Kesiapan penuh memulai PJJ</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Bentuk Pendampingan -->
+        <h2 class="section-title"><i class="fa-solid fa-hand-holding-hand"></i> Bentuk Pendampingan Murid</h2>
+        <div class="grid-4">
+            <div class="card" style="text-align: center;">
+                <i class="fa-solid fa-book-open" style="font-size: 2rem; color: var(--primary); margin-bottom: 10px;"></i>
+                <h4>Akademik</h4>
+                <p style="font-size:0.82rem; color:var(--text-muted); margin-top:5px;">Pendampingan materi, alur modul, dan penugasan harian.</p>
+            </div>
+            <div class="card" style="text-align: center;">
+                <i class="fa-solid fa-headset" style="font-size: 2rem; color: var(--secondary); margin-bottom: 10px;"></i>
+                <h4>Teknis</h4>
+                <p style="font-size:0.82rem; color:var(--text-muted); margin-top:5px;">Bantuan akses LMS, koneksi jaringan, dan perangkat.</p>
+            </div>
+            <div class="card" style="text-align: center;">
+                <i class="fa-solid fa-heart" style="font-size: 2rem; color: #e11d48; margin-bottom: 10px;"></i>
+                <h4>Psikososial</h4>
+                <p style="font-size:0.82rem; color:var(--text-muted); margin-top:5px;">Dukungan mental, motivasi, dan kebiasaan belajar mandiri.</p>
+            </div>
+            <div class="card" style="text-align: center;">
+                <i class="fa-solid fa-users-rectangle" style="font-size: 2rem; color: var(--accent); margin-bottom: 10px;"></i>
+                <h4>Kolaborasi</h4>
+                <p style="font-size:0.82rem; color:var(--text-muted); margin-top:5px;">Sinergi Sekolah Induk, Sekolah Mitra, Wali Kelas, & Orang Tua.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Masa Pengenalan Lingkungan Sekolah PJJ — SMA Negeri 2 Bitung.</p>
+        <p class="team-credits"><i class="fa-solid fa-code"></i> Didesain oleh Tim MPLS PJJ SMA Negeri 2 Bitung</p>
+    </footer>
+
+    <!-- JavaScript for Theme & Tabs -->
+    <script>
+        // Theme Toggle Logic
+        const themeToggleBtn = document.getElementById('themeToggle');
+        const htmlElement = document.documentElement;
+
+        themeToggleBtn.addEventListener('click', () => {
+            const currentTheme = htmlElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            
+            htmlElement.setAttribute('data-theme', newTheme);
+            
+            if (newTheme === 'dark') {
+                themeToggleBtn.innerHTML = '<i class="fa-solid fa-sun"></i> <span>Light Mode</span>';
+            } else {
+                themeToggleBtn.innerHTML = '<i class="fa-solid fa-moon"></i> <span>Dark Mode</span>';
+            }
+        });
+
+        // Tab Switching Logic
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].classList.remove("active");
+            }
+            tablinks = document.getElementsByClassName("tab-btn");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].classList.remove("active");
+            }
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+    </script>
+</body>
+</html>
