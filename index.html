@@ -142,7 +142,31 @@
         .loader-footer {
             font-size: 0.9rem;
             color: var(--text-muted);
+            margin-bottom: 25px;
             animation: pulse 1.5s infinite alternate;
+        }
+
+        /* Tombol Masuk Loading Screen */
+        .btn-enter {
+            background: var(--primary);
+            color: #ffffff;
+            border: none;
+            padding: 14px 32px;
+            font-size: 1rem;
+            font-weight: 700;
+            border-radius: 30px;
+            cursor: pointer;
+            box-shadow: 0 4px 14px rgba(37, 99, 235, 0.4);
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-enter:hover {
+            background: var(--secondary);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(13, 148, 136, 0.4);
         }
 
         /* Header & Nav */
@@ -487,6 +511,11 @@
             <p class="loader-info">Panduan MPLS Sekolah PJJ</p>
             <h2 class="loader-school">SMA Negeri 2 Bitung</h2>
             <p class="loader-footer">Menyiapkan langkah pertama menuju perjalanan belajar yang bermakna…</p>
+            
+            <!-- Tombol Masuk / Entry -->
+            <button id="entryBtn" class="btn-enter">
+                <i class="fa-solid fa-right-to-bracket"></i> SILAKAN MASUK / ENTRY
+            </button>
         </div>
     </div>
 
@@ -594,15 +623,32 @@
         <h2 class="section-title"><i class="fa-solid fa-calendar-days"></i> Susunan Kegiatan MPLS</h2>
         <div class="tabs-section">
             <div class="tabs-header">
-                <button class="tab-btn active" onclick="openTab(event, 'pembukaan')">Kegiatan Pembukaan MPLS</button>
+                <button class="tab-btn active" onclick="openTab(event, 'absensi')"><i class="fa-solid fa-pen-to-square"></i> ABSENSI MPLS</button>
+                <button class="tab-btn" onclick="openTab(event, 'pembukaan')">Kegiatan Pembukaan MPLS</button>
                 <button class="tab-btn" onclick="openTab(event, 'hari1')">Hari 1</button>
                 <button class="tab-btn" onclick="openTab(event, 'hari2')">Hari 2</button>
                 <button class="tab-btn" onclick="openTab(event, 'hari3')">Hari 3</button>
                 <button class="tab-btn" onclick="openTab(event, 'pendampingan')">Pendampingan Wali Kelas</button>
             </div>
 
+            <!-- Tab Absensi MPLS (MENU BARU) -->
+            <div id="absensi" class="tab-content active">
+                <h3 style="margin-bottom:10px; color:var(--primary);"><i class="fa-solid fa-clipboard-user"></i> Form Absensi MPLS PJJ</h3>
+                <p style="margin-bottom:15px; font-size:0.9rem; color:var(--text-muted);">Silakan isi daftar hadir peserta MPLS PJJ SMA Negeri 2 Bitung melalui formulir di bawah ini atau buka langsung melalui tombol yang tersedia.</p>
+                
+                <div style="margin-bottom: 20px;">
+                    <a href="https://forms.gle/8Hk1KmpCNAkccdoy6" target="_blank" rel="noopener noreferrer" class="btn-enter" style="text-decoration: none; display: inline-flex;">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i> Buka Form Absensi di Tab Baru
+                    </a>
+                </div>
+
+                <div style="width: 100%; border-radius: 12px; overflow: hidden; border: 1px solid var(--border);">
+                    <iframe src="https://forms.gle/8Hk1KmpCNAkccdoy6" width="100%" height="700" frameborder="0" marginheight="0" marginwidth="0">Memuat…</iframe>
+                </div>
+            </div>
+
             <!-- Tab Kegiatan Pembukaan MPLS -->
-            <div id="pembukaan" class="tab-content active">
+            <div id="pembukaan" class="tab-content">
                 <h3 style="margin-bottom:5px; color:var(--primary);">Rangkaian Acara Pembukaan MPLS Sekolah PJJ</h3>
                 <p style="margin-bottom:15px; font-size:0.9rem; color:var(--text-muted);"><em>* Waktu menyesuaikan jika ada perubahan.</em></p>
                 <table>
@@ -751,14 +797,14 @@
 
     <!-- JavaScript for Loading, Theme & Tabs -->
     <script>
-        // Loading Page Dismiss Logic
-        window.addEventListener('load', () => {
-            setTimeout(() => {
-                const loader = document.getElementById('loader-wrapper');
-                if (loader) {
-                    loader.classList.add('loaded');
-                }
-            }, 2500);
+        // Entry Button Logic - Menyembunyikan Preloader Saat Dikit
+        const entryBtn = document.getElementById('entryBtn');
+        const loader = document.getElementById('loader-wrapper');
+
+        entryBtn.addEventListener('click', () => {
+            if (loader) {
+                loader.classList.add('loaded');
+            }
         });
 
         // Theme Toggle Logic
