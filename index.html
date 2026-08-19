@@ -298,6 +298,13 @@
             margin-bottom: 2.5rem;
         }
 
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+
         .grid-4 {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -624,6 +631,8 @@
         <div class="tabs-section">
             <div class="tabs-header">
                 <button class="tab-btn active" onclick="openTab(event, 'absensi')"><i class="fa-solid fa-pen-to-square"></i> ABSENSI MPLS</button>
+                <!-- MENU BARU: Selayang Pandang PJJ -->
+                <button class="tab-btn" onclick="openTab(event, 'selayang')"><i class="fa-solid fa-book-bookmark"></i> SELAYANG PANDANG SEKOLAH PJJ</button>
                 <button class="tab-btn" onclick="openTab(event, 'pembukaan')">Kegiatan Pembukaan MPLS</button>
                 <button class="tab-btn" onclick="openTab(event, 'hari1')">Hari 1</button>
                 <button class="tab-btn" onclick="openTab(event, 'hari2')">Hari 2</button>
@@ -631,7 +640,7 @@
                 <button class="tab-btn" onclick="openTab(event, 'pendampingan')">Pendampingan Wali Kelas</button>
             </div>
 
-            <!-- Tab Absensi MPLS (MENU BARU) -->
+            <!-- Tab Absensi MPLS -->
             <div id="absensi" class="tab-content active">
                 <h3 style="margin-bottom:10px; color:var(--primary);"><i class="fa-solid fa-clipboard-user"></i> Form Absensi MPLS PJJ</h3>
                 <p style="margin-bottom:15px; font-size:0.9rem; color:var(--text-muted);">Silakan isi daftar hadir peserta MPLS PJJ SMA Negeri 2 Bitung melalui formulir di bawah ini atau buka langsung melalui tombol yang tersedia.</p>
@@ -644,6 +653,135 @@
 
                 <div style="width: 100%; border-radius: 12px; overflow: hidden; border: 1px solid var(--border);">
                     <iframe src="https://forms.gle/8Hk1KmpCNAkccdoy6" width="100%" height="700" frameborder="0" marginheight="0" marginwidth="0">Memuat…</iframe>
+                </div>
+            </div>
+
+            <!-- TAB BARU: SELAYANG PANDANG SEKOLAH PJJ -->
+            <div id="selayang" class="tab-content">
+                <h3 style="margin-bottom:10px; color:var(--primary); font-size:1.3rem;"><i class="fa-solid fa-landmark"></i> Mengenal Pendidikan Jarak Jauh (PJJ) - SMAN 2 Bitung</h3>
+                <p style="margin-bottom:20px; font-size:0.92rem; color:var(--text-muted);">Panduan Resmi Sekolah Induk, Sekolah Mitra, Kurikulum Merdeka, dan Pembelajaran Mendalam Tahun Ajaran 2026/2027.</p>
+
+                <!-- Pendahuluan & Konsep PJJ -->
+                <div class="grid-2" style="margin-bottom:1.5rem;">
+                    <div class="card">
+                        <h3><i class="fa-solid fa-circle-info"></i> Apa Itu Pendidikan Jarak Jauh (PJJ)?</h3>
+                        <p style="font-size:0.88rem; margin-bottom:10px; color:var(--text-main);">PJJ Jenjang Pendidikan Menengah adalah penyelenggaraan pendidikan formal ketika peserta didik dan pendidik tidak selalu berada di tempat yang sama, memanfaatkan TIK dan sumber belajar secara terencana, terukur, dan sistematis.</p>
+                        <ul>
+                            <li><strong>Bukan Kesetaraan / Paket C:</strong> PJJ adalah jalur formal resmi.</li>
+                            <li><strong>Ijazah Resmi SMA:</strong> Menerima Ijazah SMA dari Sekolah Induk.</li>
+                            <li><strong>Sasaran Utama:</strong> Anak Tidak Sekolah (ATS) usia 16–18 tahun, wilayah 3T, rawan bencana, dan kondisi geografis khusus.</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h3><i class="fa-solid fa-cubes"></i> PJJ Bukan Sekadar Sekolah Online</h3>
+                        <p style="font-size:0.88rem; margin-bottom:10px; color:var(--text-main);">PJJ menggunakan pendekatan <strong>Blended Learning</strong> (perpaduan pembelajaran daring dan tatap muka/luring).</p>
+                        <ul>
+                            <li>Sesi Tatap Maya Sinkron (Zoom/Google Meet)</li>
+                            <li>Pembelajaran Asinkron & Belajar Mandiri via LMS</li>
+                            <li>Pendampingan Tutor di Sekolah Mitra & Modul Digital/Cetak</li>
+                            <li>Kegiatan Tatap Muka Luring sesuai kebutuhan</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Perbedaan Sekolah Induk vs Sekolah Mitra -->
+                <h4 style="margin-bottom:12px; color:var(--secondary); font-size:1.1rem;"><i class="fa-solid fa-sitemap"></i> Ekosistem: Sekolah Induk vs Sekolah Mitra</h4>
+                <div style="overflow-x:auto; margin-bottom:2rem;">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Aspek</th>
+                                <th>Sekolah Induk (SMAN 2 Bitung)</th>
+                                <th>Sekolah Mitra</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Fungsi Utama</strong></td>
+                                <td>Pusat penyelenggaraan & komando utama PJJ</td>
+                                <td>Unit layanan & pusat dukungan belajar lokal</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Tanggung Jawab</strong></td>
+                                <td>Penanggung jawab utama program & akademik</td>
+                                <td>Mendukung pelaksanaan layanan lokal</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Guru & Tutor</strong></td>
+                                <td>Menyiapkan & mengelola Guru PJJ</td>
+                                <td>Menyediakan tutor pendamping lokal</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Ruang Belajar</strong></td>
+                                <td>Pusat koordinasi & sistem digital LMS</td>
+                                <td>Menyediakan ruang belajar luring jika diperlukan</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Penerbitan Ijazah</strong></td>
+                                <td><span class="badge-sinkron">BERTANGGUNG JAWAB MENERBITKAN</span></td>
+                                <td><span class="badge-asinkron">TIDAK MENERBITKAN IJAZAH</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Kurikulum & Pembelajaran Mendalam -->
+                <h4 style="margin-bottom:12px; color:var(--primary); font-size:1.1rem;"><i class="fa-solid fa-brain"></i> Kurikulum & Pembelajaran Mendalam (Deep Learning)</h4>
+                <p style="font-size:0.88rem; margin-bottom:15px; color:var(--text-main);">PJJ mengacu pada Kurikulum Merdeka yang diperkuat dengan pendekatan <strong>Pembelajaran Mendalam (Deep Learning)</strong>. Deep learning bukan kurikulum baru, melainkan pendekatan agar belajar lebih <em>Berkesadaran, Bermakna, dan Menggembirakan</em>.</p>
+                
+                <p style="font-size:0.9rem; font-weight:700; margin-bottom:10px; color:var(--text-main);">8 Dimensi Profil Lulusan PJJ:</p>
+                <div class="grid-4" style="margin-bottom:2rem;">
+                    <div class="card" style="padding:1rem; text-align:center;"><i class="fa-solid fa-hands-praying" style="color:var(--primary); font-size:1.3rem;"></i><h5 style="margin-top:5px; font-size:0.85rem;">Imtaq kepada Tuhan YME</h5></div>
+                    <div class="card" style="padding:1rem; text-align:center;"><i class="fa-solid fa-passport" style="color:var(--secondary); font-size:1.3rem;"></i><h5 style="margin-top:5px; font-size:0.85rem;">Kewargaan</h5></div>
+                    <div class="card" style="padding:1rem; text-align:center;"><i class="fa-solid fa-magnifying-glass-chart" style="color:var(--accent); font-size:1.3rem;"></i><h5 style="margin-top:5px; font-size:0.85rem;">Penalaran Kritis</h5></div>
+                    <div class="card" style="padding:1rem; text-align:center;"><i class="fa-solid fa-wand-magic-sparkles" style="color:#e11d48; font-size:1.3rem;"></i><h5 style="margin-top:5px; font-size:0.85rem;">Kreativitas</h5></div>
+                    <div class="card" style="padding:1rem; text-align:center;"><i class="fa-solid fa-people-group" style="color:var(--primary); font-size:1.3rem;"></i><h5 style="margin-top:5px; font-size:0.85rem;">Kolaborasi</h5></div>
+                    <div class="card" style="padding:1rem; text-align:center;"><i class="fa-solid fa-user-gear" style="color:var(--secondary); font-size:1.3rem;"></i><h5 style="margin-top:5px; font-size:0.85rem;">Kemandirian</h5></div>
+                    <div class="card" style="padding:1rem; text-align:center;"><i class="fa-solid fa-heart-pulse" style="color:#e11d48; font-size:1.3rem;"></i><h5 style="margin-top:5px; font-size:0.85rem;">Kesehatan</h5></div>
+                    <div class="card" style="padding:1rem; text-align:center;"><i class="fa-solid fa-comments" style="color:var(--accent); font-size:1.3rem;"></i><h5 style="margin-top:5px; font-size:0.85rem;">Komunikasi</h5></div>
+                </div>
+
+                <!-- Pemanfaatan Teknologi & AI -->
+                <div class="grid-2" style="margin-bottom:1.5rem;">
+                    <div class="card">
+                        <h3><i class="fa-solid fa-robot"></i> Etika Pemanfaatan AI (Kecerdasan Buatan)</h3>
+                        <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:10px;">Teknologi & AI digunakan sebagai alat bantu belajar yang bertanggung jawab, bukan pengganti proses berpikir.</p>
+                        <ul>
+                            <li>Gunakan AI untuk memahami konsep & mencari referensi.</li>
+                            <li>Gunakan AI untuk eksplorasi ide & umpan balik belajar.</li>
+                            <li><strong>Dilarang:</strong> Menyalin bulat-bulat jawaban AI tanpa proses nalar dan refleksi mandiri.</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h3><i class="fa-solid fa-seedling"></i> PJJ Sebagai Kesempatan Kedua</h3>
+                        <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:10px;">PJJ adalah jembatan emas bagi anak bangsa untuk kembali meraih cita-cita.</p>
+                        <ul>
+                            <li>Mendapatkan hak pendidikan formal SMA secara utuh.</li>
+                            <li>Fleksibilitas waktu tanpa mengorbankan kualitas belajar.</li>
+                            <li>Membuka peluang melanjutkan studi ke Perguruan Tinggi atau dunia kerja.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 10 Poin Penting Murid Baru -->
+                <div class="card" style="background:var(--primary-light); border-color:var(--primary);">
+                    <h3 style="color:var(--primary); margin-bottom:10px;"><i class="fa-solid fa-list-check"></i> 10 Hal Utama yang Harus Dipahami Peserta Didik Baru PJJ:</h3>
+                    <ol style="padding-left:20px; font-size:0.88rem; color:var(--text-main); line-height:1.8;">
+                        <li>PJJ adalah pendidikan formal resmi negara.</li>
+                        <li>PJJ <strong>Bukan Paket C</strong>.</li>
+                        <li>PJJ bukan sekadar sekolah online, melainkan blended learning.</li>
+                        <li>PJJ membutuhkan disiplin tinggi dan kemandirian belajar.</li>
+                        <li>Guru dan Tutor siap mendampingi proses belajar Anda.</li>
+                        <li>Sekolah Mitra menyediakan fasilitas belajar lokal.</li>
+                        <li>Sekolah Induk (SMAN 2 Bitung) adalah penanggung jawab utama & penerbit ijazah.</li>
+                        <li>Teknologi dimanfaatkan secara bijak sebagai sarana pendukung.</li>
+                        <li>Proses belajar mandiri berlanjut meski kelas virtual Zoom/GMeet telah usai.</li>
+                        <li>Murid harus menjadi pembelajar aktif yang jujur dan berintegritas.</li>
+                    </ol>
+                </div>
+
+                <div style="text-align:center; margin-top:20px; font-style:italic; font-weight:700; color:var(--secondary);">
+                    “Jarak boleh memisahkan tempat, tetapi tidak boleh membatasi kesempatan untuk belajar dan meraih masa depan.”
                 </div>
             </div>
 
