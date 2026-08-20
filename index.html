@@ -633,6 +633,8 @@
                 <button class="tab-btn active" onclick="openTab(event, 'absensi')"><i class="fa-solid fa-pen-to-square"></i> ABSENSI MPLS</button>
                 <!-- MENU BARU: Selayang Pandang PJJ -->
                 <button class="tab-btn" onclick="openTab(event, 'selayang')"><i class="fa-solid fa-book-bookmark"></i> SELAYANG PANDANG SEKOLAH PJJ</button>
+                <!-- MENU BARU: Literasi Digital -->
+                <button class="tab-btn" onclick="openTab(event, 'literasidigital')"><i class="fa-solid fa-user-shield"></i> LITERASI DIGITAL & KEAMANAN SIBER</button>
                 <button class="tab-btn" onclick="openTab(event, 'pembukaan')">Kegiatan Pembukaan MPLS</button>
                 <button class="tab-btn" onclick="openTab(event, 'hari1')">Hari 1</button>
                 <button class="tab-btn" onclick="openTab(event, 'hari2')">Hari 2</button>
@@ -782,6 +784,145 @@
 
                 <div style="text-align:center; margin-top:20px; font-style:italic; font-weight:700; color:var(--secondary);">
                     “Jarak boleh memisahkan tempat, tetapi tidak boleh membatasi kesempatan untuk belajar dan meraih masa depan.”
+                </div>
+            </div>
+
+            <!-- TAB BARU: LITERASI DIGITAL & KEAMANAN SIBER -->
+            <div id="literasidigital" class="tab-content">
+                <h3 style="margin-bottom:10px; color:var(--primary); font-size:1.3rem;"><i class="fa-solid fa-shield-cat"></i> Modul Literasi Digital & Keamanan Siber</h3>
+                <p style="margin-bottom:20px; font-size:0.92rem; color:var(--text-muted);">Panduan Memahami Pilar Literasi Digital, Mengenali Bentuk Serangan Siber, dan Metode Perlindungan Diri di Dunia Digital.</p>
+
+                <!-- 1. LITERASI DIGITAL -->
+                <h4 style="margin-bottom:12px; color:var(--primary); font-size:1.15rem; border-bottom: 2px solid var(--border); padding-bottom: 6px;"><i class="fa-solid fa-laptop-code"></i> 1. Literasi Digital</h4>
+                <p style="font-size:0.9rem; margin-bottom:1.5rem; color:var(--text-main);">Literasi digital bukan sekadar kemampuan mengetik atau membuka media sosial. Ini adalah kombinasi dari pengetahuan teknis, pola pikir kritis, serta etika dalam memanfaatkan teknologi agar seseorang bisa menyerap informasi dengan benar, berkomunikasi dengan aman, dan memproduksi konten yang bermanfaat.</p>
+
+                <div class="grid-2" style="margin-bottom:2rem;">
+                    <!-- Pilar 1 -->
+                    <div class="card">
+                        <h3><i class="fa-solid fa-screwdriver-wrench"></i> Pilar 1: Kecakapan Digital (Digital Skills)</h3>
+                        <p style="font-size:0.88rem; margin-bottom:10px; color:var(--text-main);"><strong>Penjelasan Detail:</strong> Kecakapan digital adalah kemampuan mendasar dalam memahami, mengoperasikan, dan memanfaatkan perangkat keras (hardware seperti HP, laptop, tablet) serta perangkat lunak (software seperti aplikasi, sistem operasi, browser). Seseorang yang cakap digital mampu mencari informasi secara presisi dan mengelola data dengan rapi.</p>
+                        <p style="font-size:0.88rem; font-weight:700; margin-bottom:5px; color:var(--secondary);">Contoh Konkret & Cara Kerja:</p>
+                        <ul>
+                            <li><strong>Penggunaan Operator Pencarian:</strong> Saat mencari modul materi pembelajaran di Google, alih-alih mengetik "modul matematika", siswa yang cakap digital mengetik <code>"modul matematika" filetype:pdf</code>. Hasil yang muncul hanya dokumen PDF resmi tanpa terganggu situs iklan.</li>
+                            <li><strong>Manajemen Berkas Berbasis Awan:</strong> Menyimpan tugas sekolah di Google Drive atau OneDrive dengan struktur folder yang rapi (misal: <i>Folder PJJ > Bahasa Indonesia > Tugas 1</i>) sehingga data tidak hilang jika HP rusak atau hilang.</li>
+                        </ul>
+                    </div>
+                    <!-- Pilar 2 -->
+                    <div class="card">
+                        <h3><i class="fa-solid fa-scale-balanced"></i> Pilar 2: Etika Digital (Digital Ethics)</h3>
+                        <p style="font-size:0.88rem; margin-bottom:10px; color:var(--text-main);"><strong>Penjelasan Detail:</strong> Etika digital adalah panduan moral dan tata krama saat berinteraksi di dunia siber. Karena tidak bertatap muka langsung, banyak orang merasa bebas bersikap kasar di internet. Etika digital mengajarkan kita untuk selalu memperlakukan orang lain di internet sebagaimana kita memperlakukan mereka di dunia nyata.</p>
+                        <p style="font-size:0.88rem; font-weight:700; margin-bottom:5px; color:var(--secondary);">Contoh Konkret & Cara Kerja:</p>
+                        <ul>
+                            <li><strong>Saring Sebelum Sharing:</strong> Ketika menerima berita di grup WhatsApp tentang "pembagian kuota gratis 100GB dari pemerintah", tidak langsung meneruskannya. Langkah etikanya adalah mengecek berita tersebut di portal resmi Kemendikdasmen atau situs pembanding berita bohong (turnbackhoax.id).</li>
+                            <li><strong>Menghargai Hak Cipta:</strong> Saat membuat presentasi tugas, tidak asal menyalin gambar atau tulisan dari internet. Selalu menyantumkan sumber (credit/citation), misalnya: <i>"Sumber Gambar: freepik.com"</i>.</li>
+                        </ul>
+                    </div>
+                    <!-- Pilar 3 -->
+                    <div class="card">
+                        <h3><i class="fa-solid fa-users"></i> Pilar 3: Budaya Digital (Digital Culture)</h3>
+                        <p style="font-size:0.88rem; margin-bottom:10px; color:var(--text-main);"><strong>Penjelasan Detail:</strong> Budaya digital adalah bagaimana kita membawa nilai-nilai luhur bangsa—seperti gotong royong, toleransi, dan kebhinekaan—ke dalam ruang digital. Internet yang tanpa batas sering kali memicu perpecahan; budaya digital hadir agar internet menjadi ruang yang ramah dan inklusif bagi semua orang.</p>
+                        <p style="font-size:0.88rem; font-weight:700; margin-bottom:5px; color:var(--secondary);">Contoh Konkret & Cara Kerja:</p>
+                        <ul>
+                            <li><strong>Diskusi yang Inklusif:</strong> Di grup belajar online, saat ada teman yang memiliki pendapat berbeda atau berasal dari daerah lain dengan latar belakang berbeda, tidak mengejek atau memutus komunikasi (cyberbullying), melainkan menanggapinya dengan bahasa yang santun.</li>
+                            <li><strong>Konten Positif:</strong> Membagikan konten yang mempromosikan kebudayaan lokal atau materi edukasi belajar daripada membagikan konten provokatif, ujaran kebencian, atau rumor artis.</li>
+                        </ul>
+                    </div>
+                    <!-- Pilar 4 -->
+                    <div class="card">
+                        <h3><i class="fa-solid fa-user-lock"></i> Pilar 4: Keamanan Digital (Digital Safety)</h3>
+                        <p style="font-size:0.88rem; margin-bottom:10px; color:var(--text-main);"><strong>Penjelasan Detail:</strong> Keamanan digital adalah kesadaran dan tindakan nyata untuk mengamankan identitas diri, data pribadi, dan perangkat yang kita gunakan dari potensi kejahatan digital.</p>
+                        <p style="font-size:0.88rem; font-weight:700; margin-bottom:5px; color:var(--secondary);">Contoh Konkret & Cara Kerja:</p>
+                        <ul>
+                            <li><strong>Pengaturan Privasi Akun:</strong> Mengubah setelan akun media sosial dari Public menjadi Private agar foto dan informasi pribadi tidak bisa diambil oleh orang asing untuk kejahatan.</li>
+                            <li><strong>Perlindungan Akses Perangkat:</strong> Memasang kunci layar HP menggunakan PIN 6 digit, pola kompleks, atau pemindai sidik jari (fingerprint), serta tidak pernah meminjamkan HP kepada orang yang baru dikenal.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 2. KEAMANAN SIBER -->
+                <h4 style="margin-bottom:12px; color:var(--primary); font-size:1.15rem; border-bottom: 2px solid var(--border); padding-bottom: 6px;"><i class="fa-solid fa-bug"></i> 2. Keamanan Siber (Cybersecurity) & Bentuk Ancamannya</h4>
+                <p style="font-size:0.9rem; margin-bottom:1.5rem; color:var(--text-main);">Keamanan siber adalah benteng pertahanan teknis untuk melindungi sistem komputer, jaringan, dan data pribadi dari serangan pihak jahat (hacker atau peretas).</p>
+
+                <div class="grid-2" style="margin-bottom:2rem;">
+                    <!-- Serangan 1 -->
+                    <div class="card">
+                        <h3><i class="fa-solid fa-fish-fins"></i> 1. Phishing (Pancingan Data)</h3>
+                        <p style="font-size:0.88rem; margin-bottom:10px; color:var(--text-main);"><strong>Penjelasan Detail:</strong> Phishing adalah teknik penipuan di mana pelaku menyamar sebagai pihak resmi (seperti bank, sekolah, kurir paket, atau pemerintah) untuk memancing korban menyerahkan data rahasia seperti password, nomor kartu ATM, atau kode OTP.</p>
+                        <p style="font-size:0.85rem; color:var(--text-muted); background:var(--bg-main); padding:10px; border-radius:8px;"><strong>Skenario Contoh:</strong> Korban menerima pesan WhatsApp: <i>"Halo, ini dari pihak ekspedisi paket Anda tertahan. Silakan unduh file LIHAT_FOTO_PAKET.apk ini untuk mengecek."</i> Saat file .apk itu diklik dan diinstal, aplikasi jahat tersebut secara tersembunyi membaca seluruh SMS di HP korban, mencuri kode OTP perbankan, dan menguras saldo rekening korban.</p>
+                    </div>
+                    <!-- Serangan 2 -->
+                    <div class="card">
+                        <h3><i class="fa-solid fa-triangle-exclamation"></i> 2. Malware & Ransomware</h3>
+                        <p style="font-size:0.88rem; margin-bottom:10px; color:var(--text-main);"><strong>Penjelasan Detail:</strong> Malware (Malicious Software) adalah program jahat yang dirancang untuk merusak sistem HP/komputer. Salah satu jenis malware yang paling berbahaya adalah Ransomware, yaitu program yang mengunci (mengenkripsi) seluruh dokumen pengguna sehingga tidak bisa dibuka sama sekali.</p>
+                        <p style="font-size:0.85rem; color:var(--text-muted); background:var(--bg-main); padding:10px; border-radius:8px;"><strong>Skenario Contoh:</strong> Seorang siswa mengunduh aplikasi game atau software perbaikan tugas secara gratis dari situs web tidak resmi (situs bajakan). Setelah diinstal, seluruh dokumen tugas di komputernya mendadak berubah nama menjadi file berakhiran .locked dan muncul pesan teks: <i>"Dokumen Anda telah kami kunci. Kirim uang tebusan sebesar Rp2.000.000 via Transfer Bitcoin jika ingin dokumen Anda kembali."</i></p>
+                    </div>
+                    <!-- Serangan 3 -->
+                    <div class="card">
+                        <h3><i class="fa-solid fa-brain"></i> 3. Social Engineering (Rekayasa Sosial)</h3>
+                        <p style="font-size:0.88rem; margin-bottom:10px; color:var(--text-main);"><strong>Penjelasan Detail:</strong> Kejahatan ini tidak membedah sistem komputer, melainkan memanipulasi emosi dan psikologis manusia—seperti rasa takut, panik, rasa kasihan, atau rasa senang yang berlebihan—agar korban secara sukarela menyerahkan informasi rahasianya.</p>
+                        <p style="font-size:0.85rem; color:var(--text-muted); background:var(--bg-main); padding:10px; border-radius:8px;"><strong>Skenario Contoh:</strong> Pelaku menelepon korban sambil menangis berpura-pura menjadi polisi atau pihak rumah sakit: <i>"Anak Anda mengalami kecelakaan parah dan butuh penanganan segera. Kami butuh biaya pendaftaran awal Rp3.000.000 sekarang juga!"</i> Korban yang panik langsung mengirimkan uang tanpa sempat mengecek keberadaan anaknya terlebih dahulu.</p>
+                    </div>
+                    <!-- Serangan 4 -->
+                    <div class="card">
+                        <h3><i class="fa-solid fa-id-card"></i> 4. Pencurian Identitas (Identity Theft) & Kebocoran Data</h3>
+                        <p style="font-size:0.88rem; margin-bottom:10px; color:var(--text-main);"><strong>Penjelasan Detail:</strong> Terjadi saat data sensitif pribadi (seperti Foto KTP, NIK, Nama Ibu Kandung, Tanggal Lahir) bocor ke internet atau dijual di pasar gelap (dark web). Pelaku memanfaatkan data tersebut untuk bertindak seolah-olah mereka adalah korban.</p>
+                        <p style="font-size:0.85rem; color:var(--text-muted); background:var(--bg-main); padding:10px; border-radius:8px;"><strong>Skenario Contoh:</strong> Seseorang pernah mengunggah foto KTP tanpa sensor ke media sosial untuk keperluan giveaway. Pelaku menggunakan foto KTP tersebut untuk mengajukan Pinjaman Online (Pinjol) ilegal atas nama korban. Korban baru mengetahui saat tiba-tiba ditagih oleh pihak pinjol atas utang yang tidak pernah ia ajukan.</p>
+                    </div>
+                </div>
+
+                <!-- 3. PANDUAN PRAKTIS & METODE PERLINDUNGAN DIRI -->
+                <h4 style="margin-bottom:12px; color:var(--primary); font-size:1.15rem; border-bottom: 2px solid var(--border); padding-bottom: 6px;"><i class="fa-solid fa-shield-halved"></i> 3. Panduan Praktis & Metode Perlindungan Diri</h4>
+                <div style="overflow-x:auto; margin-bottom:1.5rem;">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Area Proteksi</th>
+                                <th>Praktik Berbahaya (Hindari!)</th>
+                                <th>Praktik Terbaik & Penjelasan Keamanannya</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Kata Sandi (Password)</strong></td>
+                                <td>Menggunakan <code>123456</code>, tanggal lahir, atau kata sandi yang sama di semua akun.</td>
+                                <td>
+                                    <strong>Gunakan Passphrase Unik:</strong> Kombinasi minimal 12 karakter gabungan huruf besar, huruf kecil, angka, dan simbol (Contoh: <code>S3k0lah_Ku#2026!</code>).<br>
+                                    <small style="color:var(--text-muted);"><em>Mengapa? Kata sandi rumit membutuhkan waktu bertahun-tahun bagi komputer peretas untuk menebaknya secara otomatis (brute force).</em></small>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Otentikasi Ganda</strong></td>
+                                <td>Hanya mengandalkan Username dan Password biasa untuk masuk ke akun.</td>
+                                <td>
+                                    <strong>Aktifkan Two-Factor Authentication (2FA):</strong> Gunakan aplikasi seperti Google Authenticator atau SMS OTP.<br>
+                                    <small style="color:var(--text-muted);"><em>Mengapa? Meskipun peretas mengetahui password Anda, mereka tetap tidak bisa masuk karena tidak memiliki kode 6-digit sementara yang ada di HP Anda.</em></small>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Interaksi Tautan / Link</strong></td>
+                                <td>Langsung mengklik link hadiah, kupon gratis, atau panggilan tes kerja dari SMS/WA asing.</td>
+                                <td>
+                                    <strong>Cek Domain URL:</strong> Pastikan domain alamat web resmi (misal: situs sekolah <code>.sch.id</code>, situs pemerintah <code>.go.id</code>). Hindari link singkat seperti <code>bit.ly/hadiah_gratis</code> atau domain ganjil seperti <code>.xyz</code>, <code>.top</code>.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Koneksi Internet</strong></td>
+                                <td>Melakukan login akun penting atau transaksi keuangan menggunakan Wi-Fi gratisan di fasilitas umum.</td>
+                                <td>
+                                    <strong>Gunakan Data Seluler Pribadi atau VPN:</strong><br>
+                                    <small style="color:var(--text-muted);"><em>Mengapa? Wi-Fi publik tanpa sandi sangat mudah disadap oleh peretas yang terhubung di jaringan yang sama (Man-in-the-Middle Attack).</em></small>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Pembaruan Perangkat</strong></td>
+                                <td>Menunda notifikasi Update System di HP/Laptop karena menganggapnya membuang kuota.</td>
+                                <td>
+                                    <strong>Selalu Update Sistem Operasi & Aplikasi:</strong><br>
+                                    <small style="color:var(--text-muted);"><em>Mengapa? Update sistem tidak hanya memperbarui tampilan, tetapi juga menambal celah keamanan (security patch) yang bisa ditembus peretas.</em></small>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
 
